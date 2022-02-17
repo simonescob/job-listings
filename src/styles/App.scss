@@ -1,0 +1,14 @@
+@import "./variables";
+@import "./list-item";
+@import "./list";
+@import "./header";
+
+*{
+  font-family: "Spartan", sans-serif;
+}
+
+.App{
+  background-color: $filter_table_color;
+}
+
+
