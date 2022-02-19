@@ -10,8 +10,7 @@ const List = () => {
 
   useEffect(() => {
     if(tags.length >= 1){
-      let newJobs = jobs.filter(job => tags.find(tag => job.role === tag || job.level === tag ));
-      setJobs(newJobs);
+      setJobs((prevJobs) => prevJobs.filter(job => tags.find(tag => job.role === tag || job.level === tag )));
     }else{
       setJobs(data);
     }
