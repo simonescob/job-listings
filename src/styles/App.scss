@@ -1,14 +1,23 @@
+
 @import "./variables";
+
+@import "./functions";
+
 @import "./list-item";
 @import "./list";
 @import "./header";
+@import "./filter";
+
 
 *{
   font-family: "Spartan", sans-serif;
 }
 
+a{
+  color: $primary_color;
+  font-weight: 700;
+}
+
 .App{
   background-color: $filter_table_color;
 }
-
-

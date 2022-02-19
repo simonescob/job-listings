@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import TagsContext from './components/context';
+import Filter from './components/filter';
 import Footer from './components/footer';
 import Header from './components/header';
 import List from './components/list';
 import './styles/App.scss';
 
 function App() {
+
+  const [ tags, setTags ] = useState<string[]>([]);
+
   return (
-    <div className="App">
+    <TagsContext.Provider value={{tags, setTags}}>
+      <div className="App">
 
-      <Header/>
-
-      <List/>
-
-      <Footer/>
-      
-    </div>
+        <Header/>
+        <Filter/>
+        <List/>
+        <Footer/>
+        
+      </div>
+    </TagsContext.Provider>
   );
 }
 

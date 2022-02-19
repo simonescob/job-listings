@@ -1,0 +1,89 @@
+@mixin card_style {
+  width: $width_card;
+  padding: 25px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+@mixin tags_style($btn_delete : false) {
+  &--tags{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    // &--boxtag{
+    //   display: flex;
+    //   align-items: center;
+    //   text-align: center;
+    //   margin: 0 10px;
+    //   border-radius: 5px;
+    // }
+    
+    // &--tag, &--remove{
+    //   display: flex;
+    //   align-items: center;
+
+    //   background-color: $filter_table_color;
+    //   color: $primary_color;
+    //   font-weight: 700;
+    //   padding: 8px 5px 5px 10px;
+    //   cursor: pointer;
+    // }
+    
+    @if $btn_delete {
+
+      &--boxtag{
+        // border: solid;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 0 10px;
+      }
+      
+      &--tag, &--remove{
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        padding: 8px 5px 5px 10px;
+        cursor: pointer;
+      }
+
+      &--tag{
+        background-color: $filter_table_color;
+        color: $primary_color;
+        border-radius: 5px 0 0 5px;
+      }
+
+      &--remove{
+        width: 20px;
+        border-radius: 0 5px 5px 0;
+        background-color: $primary_color;
+        color: $filter_table_color;
+      }
+
+    } @else{
+      &--tag:hover{
+        background-color: $primary_color;
+        color: $filter_table_color;
+      }
+
+      &--tag{
+        display: flex;
+        align-items: center;
+  
+        background-color: $filter_table_color;
+        color: $primary_color;
+        font-weight: 700;
+        margin: 0 10px;
+        border-radius: 5px;
+        padding: 8px 10px 5px 10px;
+        cursor: pointer;
+      }
+
+    }
+
+  }
+}

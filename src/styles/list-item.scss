@@ -1,9 +1,5 @@
 .list-item{
-  width: 60vw;
-  padding: 25px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  @include card_style;
   margin-bottom: 30px;
 
   display: flex;
@@ -83,25 +79,6 @@
 
   }
 
-  
-  &--tags{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    &--tag{
-      background-color: $filter_table_color;
-      color: $primary_color;
-      font-weight: 700;
-      margin: 0 10px;
-      padding: 8px 10px 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-
-    }
-
-  }
+  @include tags_style($btn_delete: false);
 
 }

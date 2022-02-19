@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import TagsContext from './context';
 
 export interface Job {
   id: number,
@@ -22,8 +23,13 @@ export interface interJob {
 
 const ListItem = ({job}: interJob) => {
 
-  let tags = job.languages.concat(job.tools);
-  console.log("job", job);
+  const { tags, setTags } = useContext(TagsContext);
+
+  let jobTags = job.languages.concat(job.tools, job.role, job.level);
+
+  const clickOnTag = (tagLabel: string) => {
+    setTags(tags.concat(tagLabel));
+  }
 
   return (
     <div className={`list-item ${ job.featured ? 'list-item--border' : '' }`}>
@@ -58,11 +64,8 @@ const ListItem = ({job}: interJob) => {
       </div>
 
       <div className="list-item--tags">
-
-        <div className="list-item--tags--tag">{job.role}</div>
-        <div className="list-item--tags--tag">{job.level}</div>
         
-        {tags.map(tag => <div className="list-item--tags--tag">{tag}</div> )}
+        {jobTags.map((tag, key) => <div key={key} className="list-item--tags--tag" onClick={() => clickOnTag(tag)} >{tag}</div> )}
 
       </div>
       

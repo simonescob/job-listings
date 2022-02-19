@@ -1,0 +1,27 @@
+.filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: -50px;
+  
+  &--bar{
+    @include card_style;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &--link-clear{
+    color: $primary_color;
+    text-decoration: underline;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  @include tags_style($btn_delete: true);
+
+}
