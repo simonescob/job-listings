@@ -15,9 +15,9 @@ const Filter = () => {
   } 
 
   return (
-    <div className="filter" style={{ display: tags.length >= 1 ? "flex" : "none" }}>
+    <div className="filter">
 
-      <div className="filter--bar">
+      <div className="filter--bar" style={{ display: tags.length >= 1 ? "flex" : "none" }}>
 
         <div className="filter--tags">
 

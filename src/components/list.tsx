@@ -10,7 +10,16 @@ const List = () => {
 
   useEffect(() => {
     if(tags.length >= 1){
-      setJobs((prevJobs) => prevJobs.filter(job => tags.find(tag => job.role === tag || job.level === tag )));
+      // console.log("jobs filtered", jobs.filter(job => {
+      //   let jobTags = job.tools.concat(job.role, job.level, job.languages);
+      //   console.log("tags", tags.find(tag => jobTags.includes(tag)));
+      //   return tags.find(tag => jobTags.includes(tag));
+      // }));
+      setJobs((prevJobs) => prevJobs.filter(job => {
+        let jobTags = job.tools.concat(job.role, job.level, job.languages);
+        console.log("tags", tags.find(tag => jobTags.includes(tag)));
+        return tags.find(tag => jobTags.includes(tag));
+      }));
     }else{
       setJobs(data);
     }

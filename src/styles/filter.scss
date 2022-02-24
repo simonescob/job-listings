@@ -4,6 +4,7 @@
   justify-content: center;
   position: relative;
   top: -50px;
+  height: 10vh;
   
   &--bar{
     @include card_style;
