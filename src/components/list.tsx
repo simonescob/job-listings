@@ -11,15 +11,6 @@ const List = () => {
   useEffect(() => {
     if(tags.length > 0){
 
-      // setJobs(data.filter(job => {
-      //   let jobTags = job.tools.concat(job.role, job.level, job.languages);
-
-      //   let jobFiltered = jobTags.filter( jobLabel => tags.some(tag => tag === jobLabel ));
-      //   if(jobFiltered.length == tags.length){
-      //     return job;
-      //   }
-      // }));
-
       let jobsFiltered = data.filter((job) => {
         let jobTags = job.tools.concat(job.role, job.level, job.languages);
 
@@ -27,7 +18,7 @@ const List = () => {
         if(jobFiltered.length === tags.length){
           return job;
         }
-        
+
         return null;
       });
 

@@ -65,6 +65,11 @@
     &--job-title{
       font-weight: 700;
       font-size: $font_size_big;
+      cursor: pointer;
+    }
+
+    &--job-title:hover{
+      color: $primary_color;
     }
 
     &--footer{

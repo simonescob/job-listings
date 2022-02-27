@@ -64,6 +64,10 @@
         color: $filter_table_color;
       }
 
+      &--remove:hover{
+        background-color: $very_dark_color;
+      }
+
     } @else{
       &--tag:hover{
         background-color: $primary_color;
