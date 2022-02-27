@@ -15,7 +15,7 @@ const Filter = () => {
   } 
 
   return (
-    <div className="filter">
+    <div className="filter" style={{ marginBottom: tags.length >= 1 ? "" : "-60px" }}>
 
       <div className="filter--bar" style={{ display: tags.length >= 1 ? "flex" : "none" }}>
 

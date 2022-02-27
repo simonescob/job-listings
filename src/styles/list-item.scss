@@ -12,8 +12,6 @@
     border-left: 5px $primary_color solid;
   }
 
-  &--img{}
-
   &--company-info{
     display: flex;
   }
@@ -86,4 +84,67 @@
 
   @include tags_style($btn_delete: false);
 
+}
+
+@media (max-width: $width_mobile) {
+
+  .list-item{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    font-size: $font_size_mb;
+    
+    &--company-info{
+      flex-direction: column;
+    }
+
+    &--info{
+      margin-left: 0px;
+
+      &--job-title, &--footer{
+        margin-top: 10px;
+      }
+
+      &--job-title{
+        font-size: $font_size_mb_big;
+      }
+
+      &--company-name{
+        font-size: $font_size_mb;
+      }
+
+    }
+
+    &--img{
+      margin-bottom: 10px;
+
+      width: 70px;
+      height: auto;
+
+      position: relative;
+      bottom: 60px;
+      margin-bottom: -50px;
+    }
+    
+    &--tags{
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+
+      &--tag{
+        margin: 10px 0;
+        margin-right: 10px;
+      }
+
+    }
+
+    &--divider{
+      border-top: 1px solid;
+      color: $gray_color;
+      width: 93%;
+
+      margin: 20px 0;
+    }
+
+  }
 }

@@ -67,6 +67,8 @@ const ListItem = ({job}: interJob) => {
 
       </div>
 
+      <div className="list-item--divider"></div>
+
       <div className="list-item--tags">
         
         {jobTags.map((tag, key) => <div key={key} className="list-item--tags--tag" onClick={() => clickOnTag(tag)} >{tag}</div> )}

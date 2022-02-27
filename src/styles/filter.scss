@@ -4,7 +4,7 @@
   justify-content: center;
   position: relative;
   top: -50px;
-  height: 10vh;
+  min-height: 10vh;
   
   &--bar{
     @include card_style;
@@ -24,5 +24,26 @@
   }
 
   @include tags_style($btn_delete: true);
+  
+}
+
+
+@media (max-width: $width_mobile) {
+
+  .filter{
+  
+    &--tags{
+      flex-wrap: wrap;
+      justify-content: flex-start;
+  
+      
+      &--boxtag{
+        font-size: $font_size_mb;
+        margin: 5px;
+      }
+    
+    }
+  
+  }
 
 }
