@@ -9,17 +9,30 @@ const List = () => {
   const { tags } = useContext(TagsContext);
 
   useEffect(() => {
-    if(tags.length >= 1){
-      // console.log("jobs filtered", jobs.filter(job => {
+    if(tags.length > 0){
+
+      // setJobs(data.filter(job => {
       //   let jobTags = job.tools.concat(job.role, job.level, job.languages);
-      //   console.log("tags", tags.find(tag => jobTags.includes(tag)));
-      //   return tags.find(tag => jobTags.includes(tag));
+
+      //   let jobFiltered = jobTags.filter( jobLabel => tags.some(tag => tag === jobLabel ));
+      //   if(jobFiltered.length == tags.length){
+      //     return job;
+      //   }
       // }));
-      setJobs((prevJobs) => prevJobs.filter(job => {
+
+      let jobsFiltered = data.filter((job) => {
         let jobTags = job.tools.concat(job.role, job.level, job.languages);
-        console.log("tags", tags.find(tag => jobTags.includes(tag)));
-        return tags.find(tag => jobTags.includes(tag));
-      }));
+
+        let jobFiltered = jobTags.filter( jobLabel => tags.some(tag => tag === jobLabel ));
+        if(jobFiltered.length === tags.length){
+          return job;
+        }
+        
+        return null;
+      });
+
+      setJobs(jobsFiltered);
+
     }else{
       setJobs(data);
     }

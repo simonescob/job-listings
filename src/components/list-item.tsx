@@ -28,7 +28,11 @@ const ListItem = ({job}: interJob) => {
   let jobTags = job.languages.concat(job.tools, job.role, job.level);
 
   const clickOnTag = (tagLabel: string) => {
-    setTags(tags.concat(tagLabel));
+    if(!tags.includes(tagLabel)){
+      setTags(tags.concat(tagLabel));
+    }
+    // console.log("tags", tags);
+    // console.log("jobsTags", tagLabel);
   }
 
   return (
